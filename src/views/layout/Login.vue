@@ -63,7 +63,9 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           loginApi.login(this.loginForm).then((res) => {
-            this.$router.push('Home');
+            this.$router.push({
+              name: 'Home',
+            });
             console.log(res);
           }).catch((error) => {
             this.$message.error(error);
